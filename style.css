@@ -1,0 +1,242 @@
+/*   
+Theme Name: Edit Hub
+Theme URI: http://mandiwise.com/edithub/
+Description: The Edit Hub theme turns WordPress into a handy tool for developing and managing editorial content. Edit Hub works great on its own, but was designed for integration with the Edit Flow plugin. Visit the plugin's website for more information, or download it from the WordPress plugin directory after you've activated the Edit Hub theme.
+Author: Mandi Wise
+Author URI: http://mandiwise.com/
+Version: 1.0
+License: GNU General Public License v2.0 (excluding icons, see readme.txt for more infomation)
+License URI: http://www.gnu.org/licenses/gpl-2.0.html (again, excluding the icons)
+Tags: fixed-width, one-column, right-sidebar, white, blue
+*/
+
+* { margin: 0; padding: 0; }
+body { background: white; font: 14px/1.4 Arial, sans-serif; }
+.screen-reader-text { position: absolute; left: -9999px; top: -9999px; }
+.clear { clear: both; }
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+* html .group, *:first-child+html .group { zoom: 1; } /* First selector = IE6, Second Selector = IE 7 */
+*:focus {outline: none;}
+
+#page-wrap { width: 960px; margin: 20px auto; }
+
+@font-face {
+    font-family: 'LeagueGothicRegular';
+    src: url('fonts/League_Gothic-webfont.eot?') format('eot'), url('fonts/League_Gothic-webfont.woff') format('woff'), url('fonts/League_Gothic-webfont.ttf') format('truetype'), url('fonts/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+	font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MuseoSlab500'; src: url('fonts/museo_slab_500-webfont.eot?') format('eot'), url('fonts/museo_slab_500-webfont.woff') format('woff'), url('fonts/museo_slab_500-webfont.ttf') format('truetype'), url('fonts/museo_slab_500-webfont.svg#MuseoSlab500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3 { font-weight: normal; margin: 0 0 10px 0; }
+h1 { font-family: 'LeagueGothicRegular', sans-serif; font-size: 3.0em; color: #969696; text-transform: uppercase; }
+h2 { font-family: 'MuseoSlab500', serif; font-size: 2.0em; color: #969696; }
+h3 { font-family: 'LeagueGothicRegular', sans-serif; font-size: 2.05em; color: #E85CD0; }
+h4 { color: #444; }
+
+#header { padding: 25px 0; }
+h1#logo { display: block; margin: 0; }
+h1#logo a { border: 0 none; pointer: cursor; }
+h2 a { color: #969696; text-decoration: none; }
+h2 a:hover { text-decoration: none; color: #E85CD0; }
+
+p { margin: 0 0 10px 0; color: #444; font-size: 1.1em; line-height: 150%; }
+a { color: #98C92E; text-decoration: none; }
+a:hover { text-decoration: underline; }
+span.sans-serif { font-family: Arial, sans-serif; }
+
+blockquote { margin: 10px 35px 10px 35px; padding-left: 15px; border-left: 2px solid #98C92E; }
+blockquote p { font-family: Arial, sans-serif; color: #969696; }
+
+ul, ol { margin: 0 0 10px 0; }
+ul { list-style-type: square; }
+ul li { margin-left: 18px; }
+ol li { margin-left: 20px; }
+
+.alignleft { float: left; margin: 10px 10px 10px 0; }
+.alignright { float: right; margin: 10px 0 10px 10px; }
+.aligncenter { margin-left: auto; margin-right: auto; display: block; }
+
+.wp-caption-text, .gallery-caption { font-size: 0.9em; color: #969696; }
+
+/* Because WP said so */
+.wp-caption, .bypostauthor { }
+
+code, tt { font-family: Courier; background: #F7F2F2; padding: 3px; }
+pre { font-family: Courier; background: #F7F2F2; padding: 10px; overflow-x: scroll; }
+
+/* Styles main navigation menu */
+.hub-nav { width: 780px; max-height: 35px !important; font-family: 'MuseoSlab500', serif; font-size: 1.0em;	color: #fff; overflow: hidden; }
+.hub-nav ul { list-style: none;	overflow: hidden; margin: 0; }
+.hub-nav li { display: inline; float: left;	background: #2FBFD4; padding: 8px; margin: 0 3px 0 0; }
+.hub-nav li.current_page_item { background: #72DFEF; display: block; }
+.hub-nav li:hover { background: #72DFEF; }
+.hub-nav li.current_page_item a:hover { text-decoration: none; color: #fff; cursor: default; }
+.hub-nav li a { color: #fff; text-decoration: none; display: block; }
+.hub-nav li a:hover { text-decoration: none; color: #ffc; }
+.hub-nav li.current_page_parent { background: #72DFEF; }
+body.single-ehub_events .hub-nav li.current_page_parent { background: #2FBFD4; }
+
+ul.hub-nav { margin-bottom: 0 !important; }
+
+.hub-nav li ul { position: absolute; width: 12em; left: -999em; z-index: 100; margin: 8px 0 0 -8px; }
+.hub-nav li ul li { list-style-type: none; background: #72DFEF; border-bottom: 1px solid #2FBFD4; width: 100%; }
+.hub-nav li ul li a { cursor: pointer !important; }
+.hub-nav li ul a:hover { color: #ffc; text-decoration: none; }
+.hub-nav li:hover ul, .hub-nav li.sfhover ul { left: auto; }
+.hub-nav li.current_page_item ul a:hover { color: #ffc; }
+
+/* Basics styles for main content, post & excerpt areas */
+#main-container { width: 720px;	min-height: 425px; border: 10px solid #72DFEF; float: left;	padding: 20px; }
+#main-container > :last-child { border-bottom: none !important; }
+
+.post { border-bottom: 1px dotted #969696; margin-bottom: 15px; }
+body.single .post { border: none; margin: 0; }
+
+span.read-more a { text-decoration: none; color: #969696; }
+span.read-more a:hover { color: #98C92E; }
+a.read-more { text-decoration: none; color: #969696; }
+a.read-more:hover { color: #E85CD0; }
+
+.next-posts { font-family: 'MuseoSlab500'; font-size: 1.0em; display: block; float: left; }
+.prev-posts { font-family: 'MuseoSlab500'; font-size: 1.0em; display: block; float: right; }
+.next-posts a, .prev-posts a { color: #969696; }
+.next-posts a:hover, .prev-posts a:hover { color: #98C92E; text-decoration: none; }
+
+/* Styles post metadata */
+.meta {  font-family: 'MuseoSlab500', serif; color: #969696; margin-bottom: 10px; }
+.postmetadata { font-family: 'MuseoSlab500', serif; margin-bottom: 20px; clear: both; }
+.postmetadata p { color: #969696; font-size: 1.0em; }
+.postmetadata p a { font-family: Arial, sans-serif; }
+body.single .postmetadata { border-bottom: 1px dotted #969696; border-top: 1px dotted #969696; margin-bottom: 10px; padding-top: 10px; }
+ 
+/* Style overview page template */
+.overview-block { border-bottom: 1px dotted #969696; margin-bottom: 15px; padding-bottom: 10px; }
+ul#recently-posted li { list-style: none; margin: 0 0 10px 0; }
+ul#recently-posted li a { font-family: 'MuseoSlab500', serif; font-size: 1.1em; }
+ul#recently-posted li span.recent-meta { font-family: Arial, sans-serif; color: #444; display: block; }
+h4.brief-event-listing { font-family: 'MuseoSlab500', serif; font-size: 1.1em; font-weight: normal; color: #969696; }
+.brief-event-listing .eventtext { margin-bottom: 10px; }
+
+/* Styles attachment list */
+ul.post-attachments { list-style: none;	margin-bottom: 10px; }
+li.post-attachment { background: url(images/attachment.png) 0 50% no-repeat; margin-left: 0; padding-left: 28px; margin-bottom: 10px; min-height: 20px; }
+.post-attachment.mime-imagejpeg, .post-attachment.mime-imagepng , .post-attachment.mime-imagegif, .post-attachment.mime-imagetiff { background-image: url(images/attachment-image.png); }
+.post-attachment.mime-applicationzip { background-image: url(images/attachment-zip.png); }
+.post-attachment.mime-applicationpdf { background-image: url(images/attachment-pdf.png); }
+.post-attachment.mime-applicationmsword { background-image: url(images/attachment-word.png); }
+.post-attachment.mime-audiompeg, .post-attachment.mime-audiomp4 { background-image: url(images/attachment-audio.png); }
+.post-attachment.mime-videompeg, .post-attachment.mime-videomp4, .post-attachment.mime-videoquicktime, .post-attachment.mime-videox-ms-wmv { background-image: url(images/attachment-video.png); }
+
+/* Styles export actions for post content on single pages */
+#content-actions { font-family: 'MuseoSlab500', serif; margin-left: -10px; font-size: 1.0em; }
+#content-actions > :last-child { border-right: none !important; }
+.action { float: left; padding: 0px 10px; border-right: 1px dotted #969696; }
+.action img { margin-right: 4px; vertical-align: -15%; }
+   
+/* Styles full event listing page template */
+.full-events { border-bottom: 1px dotted #969696; }
+.full-events .time { color: #969696; line-height: 0.85em; padding: 2px 0 5px; }
+.full-events .eventtext { font-family: 'MuseoSlab500'; font-size: 1.3em; color: #969696; }
+.full-events .desc { color: #444; margin-top: 10px; }
+h3.full-events { font-family: 'LeagueGothicRegular', sans-serif; font-size: 2.0em; color: #E85CD0; padding-top: 15px; border: 0; }
+.event-cat-list { font-family: 'MuseoSlab500', serif; color: #969696; margin: 10px 0 20px; }
+.event-cat-list a { font-family: Arial, sans-serif; }
+body.page-template-eventlisting-php .entry > :first-child { margin-top: -15px; }
+
+/* Styles full archive page template */
+#archives-wrapper {  }
+#archives-wrapper > :first-child { margin-top: 0; }
+#archives-wrapper > :last-child { border-bottom: none; padding-bottom: 5px; }
+#archives-wrapper ul { list-style: none; margin-bottom: 20px; color: #969696; }
+#archives-wrapper ul li { margin-left: 0; }
+.archive-type-block { border-bottom: 1px dotted #969696; margin-top: 15px; }
+.archive-type-block a { font-family: 'MuseoSlab500', serif; }
+.month-select { padding-bottom: 20px; }
+#in-archive-search { margin-bottom: 20px; }
+.archive-type-block ul.wp-tag-cloud { margin-bottom: 0 !important; }
+.archive-type-block ul.wp-tag-cloud li { list-style-type: none; float: left; padding: 3px 10px; margin-right: 5px; border: 1px solid #d2d2d2; -webkit-border-radius: 12px;	-moz-border-radius: 12px; border-radius: 12px; box-shadow: rgba(0,0,0, 0.15) 0px 0px 6px; -moz-box-shadow: rgba(0,0,0, 0.15) 0px 0px 6px; -webkit-box-shadow: rgba(0,0,0, 0.15) 0px 0px 6px; }
+.archive-type-block ul.wp-tag-cloud li:hover { box-shadow: rgba(0,0,0, 0.22) 0px 0px 7px; -moz-box-shadow: rgba(0,0,0, 0.22) 0px 0px 7px; -webkit-box-shadow: rgba(0,0,0, 0.22) 0px 0px 7px; }
+.archive-type-block ul.wp-tag-cloud li a { color: #98C92E; }
+.archive-type-block ul.wp-tag-cloud li a:hover { text-decoration: none; }
+body.tax-ehub_eventcategory .type-ehub_events { border-bottom: 1px dotted #969696; margin-bottom: 15px; }
+
+/* Style on archive and search pages header h3 page */
+h3.archive { font-size: 1.75em; border-bottom: 1px dotted #969696; padding-bottom: 10px; margin-bottom: 15px; }
+
+/* Extra style for search results page */
+body.search .post, body.search .page { border-bottom: 1px dotted #969696; padding-bottom: 10px; margin-bottom: 15px; }
+
+/* Style archive list on full archive page template and sidebar */
+#archives-wrapper li.cat-item { margin-bottom: 10px; }
+#archives-wrapper ul.children { margin-bottom: 0; } 
+#archives-wrapper ul.children li { margin-left: 15px !important; padding-left: 15px; list-style-type: none; background: url(images/grey-bullet.png) no-repeat center left; }
+
+/* Styles global search form */
+.searchform { background: transparent; width: 160px; position: relative; }
+	.s { width: 126px; font-family: 'Arial', sans-serif; font-size: 0.9em; color: #969696; padding: 4px; background: #fff; border: 1px solid #d2d2d2; -webkit-border-radius: 12px; -moz-border-radius: 12px; border-radius: 12px; box-shadow: rgba(0,0,0, 0.15) 0px 0px 6px; -moz-box-shadow: rgba(0,0,0, 0.15) 0px 0px 6px; -webkit-box-shadow: rgba(0,0,0, 0.15) 0px 0px 6px; }
+	.searchsubmit { cursor: pointer; }
+	.searchform input[type="submit"] { background: url("images/search-button.png") no-repeat scroll transparent; border: 0 none; display: block; height: 20px; width: 20px; position: absolute; top: 2px; left: 140px; text-indent: -9999px; font-size: 0; line-height: 0; }
+	.searchform input:focus { box-shadow: rgba(0,0,0, 0.22) 0px 0px 7px; -moz-box-shadow: rgba(0,0,0, 0.22) 0px 0px 7px; -webkit-box-shadow: rgba(0,0,0, 0.22) 0px 0px 7px; }
+
+/* Styles sidebar */
+#sidebar-nav { width: 160px; background: #F7F2F2; padding: 15px 10px; margin-top: 30px; float: left; }
+.sidebar-block { border-bottom: 1px dotted #969696; padding-bottom: 0px; margin-bottom: 10px; }
+#sidebar-nav form.searchform { margin-bottom: 15px; }
+#sidebar-nav .month-select { padding-bottom: 0; margin-bottom: 15px; }
+#sidebar-nav ul { margin-bottom: 15px; }
+#sidebar-nav h2 { font-family: 'LeagueGothicRegular', sans-serif; font-size: 1.75em; color: #E85CD0; }
+#sidebar-nav li { list-style: none; color: #555; margin-left: 0; }
+.sidebar-button { margin: 20px 0px; }
+.sidebar-button a { background: rgba(0,0,0, 0.3); color: #fff; font-family: 'MuseoSlab500', serif; font-size: 0.85em; padding: 6px 12px; -webkit-border-radius: 14px; -moz-border-radius: 14px; border-radius: 14px; }
+.sidebar-button a:hover { text-decoration: none; background: rgba(0,0,0, 0.35); }
+#menutop .sidebar-button { margin: 20px 0px 5px; }
+
+#footer { margin-top: 10px; }
+#footer-tag { font-family: 'MuseoSlab500', serif; font-size: 0.9em;	color: #969696; }
+#footer-tag a { color: #646464; text-decoration: none; }
+#footer-tag a:hover { text-decoration: underline; }
+
+/* Hides the Admin bar search box */
+#adminbarsearch-wrap { display:none; }
+
+/* New post link */
+a#newpost { position: fixed; top: 28px; right: 32px; background: rgba(0,0,0, 0.38); font-size: 2.5em; font-weight: bolder; line-height: 0.8em; color: #fff; text-shadow: 0 1px 0 rgba(0,0,0, 0.28); padding: 8px 15px 10px; }
+a#newpost:hover { background: rgba(0,0,0, 0.43); text-decoration: none; cursor: pointer; }
+
+@media print {
+
+.do-not-print { display: none; }
+
+body { width: 100% !important; margin: 0 !important; padding: 0 !important; line-height: 1.5; word-spacing: 1.1pt; letter-spacing: 0.2pt; font-family: Arial, sans-serif; color: #000; background: none; font-size: 12pt; }
+h1,h2,h3,h4,h5,h6 { font-family: Arial, sans-serif; }
+h1 { font-size:24pt; }
+h2 { font-size:21pt; }
+h3 { font-size:17pt; }
+h4,h5,h6 { font-size:12pt; }
+code { font: 10pt Courier, monospace; } 
+blockquote { margin: 15px; padding: 10px; }
+img { display: block; margin: 1em 0; }
+a img { border: none; }
+table { margin: 1px; text-align:left; }
+th { border-bottom: 1px solid #646464;  font-weight: bold; }
+td { border-bottom: 1px solid #646464; }
+th, td { padding: 4px 10px 4px 0; }
+caption { background: #fff; margin-bottom: 2em; text-align: left; }
+thead { display: table-header-group; }
+tr { page-break-inside: avoid; } 
+a { text-decoration: none; color: black; }
+
+h1#logo { display: none; }
+.hub-nav{ display: none; }
+#main-container { border: none; width: 95% }
+.meta, .postmetadata p { font-family: Arial, sans-serif; font-size: 12pt; }
+body.single .meta { margin-bottom: 30px; } 
+body.single .postmetadata { border-bottom: none; }
+#content-actions { display: none; }
+	
+} /* END print media */

@@ -1,0 +1,10 @@
+/* IE RGBA fix */
+.sidebar-button a, a#newpost { background: #969696; } 
+.sidebar-button a:hover, a#newpost:hover { background: #8c8c8c; }
+
+/* Fix height on post actions */
+.action { border: none; padding-left: 0px; padding-right: 15px; }
+.action img { vertical-align: text-bottom; }
+
+/* Fix border on keyword cloud */
+#archives-wrapper #ie-last-fix { border-bottom: none; }

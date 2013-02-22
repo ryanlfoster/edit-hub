@@ -1,0 +1,18 @@
+/* style for custom statuses */
+
+#review-status { border-top: solid 1px #fff; }
+.custom_state { font-size:12px; color:#666; background:#e5e5e5; padding:4px 6px; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; border-radius:3px; }
+.spelling { background:#4BC8EB; color:#fff; }
+.review { background:#CB4BEB; color:#fff; }
+.errors { background:#FF0000; color:#fff; }
+.source { background:#D7E01F; color:#333; }
+.rejected { background:#000000; color:#fff; }
+.final { background:#DE9414; color:#333; }
+
+/* additional style for default statuses */
+
+.post-state .pending {  }
+.post-state .draft {  }
+.post-state .sticky {  }
+.post-state .private {  }
+.post-state .password-protected {  } 
